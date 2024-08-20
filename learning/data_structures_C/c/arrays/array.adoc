@@ -1,0 +1,40 @@
+. coolection of similar set of variables
+. arrays are vector variables
+initialisation can be done fo r only a few values
+eg: 
+  int a[5]={2,4};  wil 2,4,0,0,0 all ungiven value will be 0
+  int a[]={n1,n2,n3..} the size will be the number of elements
+
+Accessing elemnet
+A[2], 2[A], *(A+2)
+
+Static vs Dynamic array
+* once array created size cant be modified
+* in cpp size of array can be modified at run time in c not possible like gertting the size using cin and declaring llike a[n] = {} but in c n should always be an interger like a[5]
+
+Arry from heap(dynamic array): A pointer is always needed to read memmory from heap
+cpp -> int *p; p=new int[5];
+c -> int *p; p=(int *)malloc(5*sizeof(int));  # here (int *) is for type casting as with malloc a memmory block only will be allocated 
+
+deallocataion heap (memmory leak will occur if not)
+
+cpp -> delete []p
+c -> free(p)
+
+
+ARRAY CANNOT BE RESIZED BUT HEAP ARRAY CAN BE RESIZED IN A DIFFERENT WAY
+
+int *p,*q;
+p = new int[3]
+p[0]=1;p[1]=2;p[3]=1;
+q = new int[5];
+for(i=0;i<5;i++){
+    q[i]=p[i];
+}
+# to free the space already occupied by p
+delete []p;
+p=q;
+q=NULL
+
+
+ 

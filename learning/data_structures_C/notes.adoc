@@ -1,0 +1,38 @@
+* Main memmory is devided into three sections. When a program is runs in main memmory
+    -> code will be in code section.
+    -> array is stored in stack stac has a fixed limit
+    -> heap will be accessed in dynamic memmory alocation
+
+= introduction to data structure
+    -> data structure is the arrangement of data in memmory inorder to operations efficiently.
+    -> data during execution is stored in memmory
+    -> data base arrange ment in hard disc so that program can easily access later.
+    -> data warehouse collection if discs where legacy data is stored.
+    -> algorithms written for accessing these data are data mining algorithms
+    -> memmory is assumed to be made of small bytes and each byte has and address. Each byte has an address and the address is leniar
+    -> in larger memmory the memmory can be seen as divided into segments where each segment is 64 kB. 
+    -> program uses main memmory by spliting int inot 3 sections stack, code section and heap
+    -> whenever variables are allocated in a defined memmory is alocated in stack, memmory alocated for storing variables in stack for a program or 
+    a function is called activation record, This amount can be predetermined at time of compilation and will be recerved in stack at run time. as this 
+    will be a fixed amount it is called static memmory.
+    -> For each function bloack an activation record will be there and it will be alocated in stack when called and once the execution completes it will be deleted
+    automatically by the compiler.
+    -> heap is like a resource and shoud be accessed with a pointer. And also we should deallocate the heap once use is done else over time it can lead to
+    memmory leaks.
+
+
+= Introduction to Data Structures
+
+Data structures involve the organization of data in memory to facilitate efficient operations. During execution, data is stored in memory, while databases arrange data on hard disks for easy program access later. Data warehouses are collections of disks where legacy data is stored, and algorithms designed for accessing this data are known as data mining algorithms.
+
+In the realm of memory, it is assumed to be made up of small bytes, each with a linear address. Larger memory is often divided into segments, with each segment typically being 64 kB. Programs utilize main memory by dividing it into three sections: stack, code section, and heap.
+
+* When variables are allocated in defined memory, it is done in the stack. The memory allocated for storing variables in the stack for a program or function is called an activation record. This amount can be predetermined at compile time and reserved in the stack at runtime, making it static memory.
+
+* For each function block, an activation record is created and allocated in the stack when called. Once the execution completes, it is automatically deleted by the compiler.
+
+* The heap, on the other hand, is a resource accessed with a pointer. It is crucial to deallocate the heap once its use is complete to prevent memory leaks over time.
+
+Static vars
+
+static vars dont change value on repetaed calls of the same function

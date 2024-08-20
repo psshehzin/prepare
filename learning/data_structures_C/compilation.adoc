@@ -1,0 +1,27 @@
+Editing:
+
+The programmer writes the C source code using a text editor or an Integrated Development Environment (IDE).
+Preprocessing:
+
+The preprocessor (invoked by the compiler using the -E option) processes the source code before actual compilation. This involves handling directives like #include, #define, and #ifdef.
+The preprocessor replaces header files, macro definitions, and removes comments.
+Compilation:
+
+The compiler (e.g., GCC, Clang) translates the preprocessed source code into assembly code or an intermediate representation.
+The result is one or more object files (.o or .obj files), which contain machine code specific to the target architecture but are not yet executable.
+Assembly:
+
+The assembler (e.g., GNU Assembler) converts the assembly code into machine code.
+This step produces object files containing machine code instructions.
+Linking:
+
+The linker (e.g., GNU linker, ld) combines multiple object files and resolves external references to create an executable file.
+It resolves function and variable references, merges code and data sections, and generates the final executable.
+Linking may involve static libraries (.a or .lib files) and dynamic/shared libraries (.so or .dll files).
+Loading:
+
+The loader (part of the operating system or a separate program) loads the executable into memory for execution.
+Execution:
+
+The operating system starts the execution of the program, and the CPU executes the machine code instructions.
+During these steps, various tools are used, such as the compiler, preprocessor, assembler, and linker. The process may be controlled through build systems (like Makefiles) or build tools (like CMake). Understanding this compilation process helps in diagnosing and fixing issues, optimizing code, and working with complex projects.

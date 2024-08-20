@@ -1,0 +1,2 @@
+- recursion has asending and desending phase.
+- loops only have ascending phase

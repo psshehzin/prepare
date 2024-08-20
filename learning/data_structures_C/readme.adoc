@@ -1,0 +1,79 @@
+= Introduction to Data Structures
+
+Data structures involve the organization of data in memory to facilitate efficient operations. During execution, data is stored in memory, while databases arrange data on hard disks for easy program access later. Data warehouses are collections of disks where legacy data is stored, and algorithms written for accessing this data are called data mining algorithms.
+
+== Memory allocation stack and heap
+
+In the realm of memory, it is assumed to be made up of small bytes, each with a linear address. Larger memory is often divided into segments, with each segment typically being 64 kB. Programs use main memory by dividing it into three sections: stack, code section, and heap.
+
+- Whenever variables are allocated in defined memory, it is done in the stack. The memory allocated for storing variables in the stack for a program or function is called an activation record. This amount can be predetermined at compile time and reserved in the stack at runtime, making it static memory.
+
+- For each function block, an activation record is created and allocated in the stack when called. Once the execution completes, it is automatically deleted by the compiler.
+
+- The heap is like a resource and should be accessed with a pointer. Also, we should deallocate the heap once its use is done, else over time, it can lead to memory leaks.
+as the memmory is allocated at run time beased on our requirement it is called dynamic memory.
+
+== Types of data structures
+
+=== Physical: array, linkedlist (Thesse decide how memmory is allocated)
+==== Array
+- array memmory side by side, fixed size(cant be increased or decreased), can be created in stack or heap.
+- when you know max size of data 
+
+=== linked list
+- always in heap
+- implemented with arrays or linked list or both
+
+=== Logical ds
+stack queue heap and graph.decipleine of organising data in array or linked list
+
+==== leniar
+stack queue
+==== Nonleniar
+tree graph
+==== tabular
+hash table
+
+== Abstract Datatype(Adt)
+Data type is representation and operation of data(hiding details, class implementation in, it can be used without knowing implementation)
+append insert remove set search get sort (operations on list)
+
+
+==Time and space complexity
+- Time complexity : depends on procedure of task. If n elements are there in a list  and we need to go through them oonce time complexity is n(o(n)).
+- if the time of loop seems to be a polynomial the highest degree is considere.(eg n+n-1+......1 = n(n-1)/2 so this o(n2))
+- for (i=n;i>1;i=i/2) (order is log2(n) log of n to the base of 2)
+- processing matrix also n2
+- tree if process along the height the time complexity is log2(n), if all elements processed it is n
+
+static vars preserve values accross function call but there scope is limited to the function in which they were declared. they can be accessed only in those functions
+global can be accessed throughout
+
+== recursion
+
+- Tail recursion: if last statement in a function is recurssion
+tail recursion is similar to loops and loops are better in cases where we use tail recursion as recursion creates more active records and thus more memmory. Also tail recursion can be  implemented with loops as well.
+
+- Head recurssion: if very first part of a function is  and these mostly cant be directly converted into loops but can be implemented in loops with a different logic.
+
+- Tree recursion when recursion calls are made more than once
+- indirect recursion when one function calls another and that calls this one back
+- nested recursion when in function call andother recursive call is made.
+eg 
+'''
+int fun(int n)
+{
+ if(n>100)
+ return n -10;
+ else
+ return fun(fun (fun(n+11)));
+}
+fun(95)
+'''
+
+- while writing recursive function first we must identify for the last value of n whats the formula and for the first value of n whats the formula
+eg for sum of n numbers: sum(n) - > {
+                                        0 if n = 0
+                                        sum(n-1)+n if n = n
+                                    }
+- storing the return values of a function in an array so that it can be reused when required is called memoization.(can be used in recursion)

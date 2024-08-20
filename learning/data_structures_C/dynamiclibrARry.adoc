@@ -1,0 +1,46 @@
+Dynamic/shared libraries, often referred to as shared objects (SO) on Unix-like systems (such as Linux) or dynamic link libraries (DLL) on Windows, are compiled binary files containing functions and code that multiple programs can use simultaneously. These libraries provide a way to share code among different programs, reducing redundancy and improving the efficiency of software development and maintenance. There are a few key characteristics of dynamic/shared libraries:
+
+Dynamic Linking:
+
+Dynamic libraries are linked to executable programs during runtime rather than at compile time. This means that the linking process occurs when the program is launched, allowing for flexibility and the possibility of updating the library without recompiling the programs using it.
+Code Sharing:
+
+Multiple programs can use the same dynamic/shared library. This promotes code reuse and helps reduce the overall size of executable files because the library is loaded into memory only once, even if multiple programs are using it.
+Run-Time Loading:
+
+Dynamic/shared libraries are loaded into memory by the operating system or a dynamic linker when the program starts running. This allows for on-demand loading and unloading of libraries, improving the efficiency of resource usage.
+Separation of Concerns:
+
+Dynamic libraries allow for the separation of program logic into modular components. This modular approach simplifies development, maintenance, and updates, as changes to a shared library can be propagated to all programs using it without recompilation.
+Versioning and Compatibility:
+
+Dynamic libraries support versioning mechanisms, enabling multiple versions of a library to coexist on a system. This helps maintain compatibility with programs that rely on specific versions of a library.
+Platform Independence:
+
+Dynamic/shared libraries contribute to platform independence by providing a standardized interface for programs. As long as the interface remains consistent, the underlying implementation details can vary across different platforms.
+Here's a simple example in C illustrating the use of shared libraries:
+---------------------------------------------------------------------------------------------------
+
+// ExampleLibrary.h
+#ifndef EXAMPLE_LIBRARY_H
+#define EXAMPLE_LIBRARY_H
+
+void helloWorld();
+
+#endif
+-------------------------------------------------------------------------------------------------------------
+
+// ExampleLibrary.c
+#include <stdio.h>
+
+void helloWorld() {
+    printf("Hello, World!\n");
+}
+---------------------------------------------------------------------
+# Compile the shared library
+gcc -shared -o libexample.so ExampleLibrary.c -fPIC
+
+--------------------------------------------------------------------
+# Compile the program using the shared library
+gcc -o my_program my_program.c -lexample -L.
+In this example, libexample.so is a shared library that contains the helloWorld function, and my_program is a program that uses this shared library. The program is linked to the shared library at runtime.
